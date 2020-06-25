@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>This Person Does not Exist!!</title>
+	<meta charset="utf-8">
+	<style type="text/css">
+		.main{
+			position: absolute;
+			left: 50%;
+			top: 50%;
+			transform: translate(-50% , -50%);
+		}
+		#myImg{
+			height: 400px;
+			width: 400px;
+		}
+	</style>
+</head>
+<body>
+	<div class="main">
+		<h1>!! This person Does Not Exist !!</h1>
+		<img  id ="myImg" src="" align="center">
+	</div>
+	<script>
+		async function getFace(){
+			let response = await fetch('https://api.generated.photos/api/v1/faces?per_page=1&gender=female&order_by=random',{
+			method: 'GET',
+			headers: {
+				'Authorization' : 'API-Key xckKe0GGgtdHt8hqUfXunQ'
+			}	
+			});
+
+			let result = await response.json();
+			document.getElementById("myImg").src = result.faces[0].urls[4]["512"];
+		}
+		getFace();
+	</script>
+</body>
+</html>
