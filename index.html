@@ -2,24 +2,53 @@
 <html>
 <head>
 	<title>This Person Does not Exist!!</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 	<meta charset="utf-8">
 	<style type="text/css">
+		@import url('https://fonts.googleapis.com/css?family=Red+Hat+Display:900&display=swap');
+		body{
+			display: grid;
+			place-content: center;
+			height: 100vh;
+			font-family: 'Red Hat Display', sans-serif;
+			background: rgb(34,162,195);
+			background: linear-gradient(0deg, rgba(34,162,195,1) 0%, rgba(253,45,140,1) 100%);
+		}
 		.main{
 			position: absolute;
 			left: 50%;
 			top: 50%;
 			transform: translate(-50% , -50%);
+			max-width: 60%;
+
 		}
 		#myImg{
 			height: 400px;
 			width: 400px;
 		}
+		h1{
+			color: #111; 
+			font-family: 'Lato', sans-serif;  
+			font-weight: bold; 
+			letter-spacing: -1px; 
+			line-height: 1; 
+			text-align: center;
+			margin: 50px auto
+			font-size: 10vw;
+  			max-width: 75vw;
+  			padding-bottom: 30px;
+		}
+		button{
+			margin: 50px auto 
+		}
+
 	</style>
 </head>
 <body>
 	<div class="main">
-		<h1>!! This person Does Not Exist !!</h1>
-		<img  id ="myImg" src="" align="center">
+		<h1 class="text-center text-monospace" ><span>This person Does Not Exist</span> </h1>
+		<img  id ="myImg" src="" class="mx-auto d-block rounded-circle" alt="Cinque Terre">
+		<button class="btn btn-success btn-block" onClick="window.location.reload();">Generate new Face</button>
 	</div>
 	<script>
 		async function getFace(){
